@@ -51,7 +51,7 @@ export class ZMComponent implements OnInit {
 
   changeNumer(numI: number,numJ: number,item1:number){
     let result = numI * numJ;
-        if (result > item1) {
+        if (result >= item1) {
           result = result % item1;
         }
        return result;
