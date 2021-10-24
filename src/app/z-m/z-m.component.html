@@ -1,0 +1,52 @@
+
+<div class="container">
+  <h2 style="margin-bottom: 25px;">
+    Construya las tablas de multiplicación para los conjuntos Z_3, Z_4, ..., Z_12.
+  </h2>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Z_m</mat-label>
+        <input type="number" matInput placeholder="Z_m" value="" [(ngModel)]="z_m" [ngModelOptions]="{standalone: true}"
+        (ngModelChange)="ejecutar=false">
+      </mat-form-field>
+    </form>
+  
+    <button mat-raised-button color="primary" (click)="generateList()" [disabled]=" z_m < 3 || z_m > 12" >Genrate List</button>
+    <!-- <p>La suma de los dos valores es:{{resultado}}</p> -->
+  
+  
+    <div style = "padding-bottom: 25px;" *ngIf="ejecutar" >
+      <ng-container *ngFor="let item1 of [3,4,5,6,7,8,9,10,11,12]">
+        <div *ngIf="item1 <= z_m">
+  <h2 >Tabla para Z_m = {{item1}}</h2>
+        <table class="default" style="margin-bottom: 25px;">
+    
+          <tr>
+    
+            <th scope="row">X</th>
+    
+            <th *ngFor="let item of list | slice: 0 : item1">
+              {{item}}
+            </th>
+    
+    
+          </tr>
+    
+          <tr *ngFor="let li of list_result| slice: 0 : item1 ; let i=index">
+    
+            <th>{{i}}</th>
+    
+            <td *ngFor="let item of li | slice: 0 : item1; let j=index">{{item}}</td>
+    
+          </tr>
+    
+    
+        </table>
+        </div>
+        
+      </ng-container>
+      
+      
+    </div>
+  
+  </div>
