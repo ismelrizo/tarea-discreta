@@ -32,11 +32,11 @@
     
           </tr>
     
-          <tr *ngFor="let li of list_result | slice :0 :item1; let i=index">
+          <tr *ngFor="let li of list | slice :0 :item1; let i=index">
     
             <th>{{i}}</th>
     
-            <td *ngFor="let item of li | slice :0 :item1 ; let j=index ">{{changeNumer(i,j,item1)}}</td>
+            <td *ngFor="let item of list | slice :0 :item1 ; let j=index ">{{changeNumer(li,item,item1)}}</td>
     
           </tr>
     
