@@ -15,28 +15,28 @@
     <!-- <p>La suma de los dos valores es:{{resultado}}</p> -->
   
   
-    <div style = "padding-bottom: 25px;" *ngIf="ejecutar" >
+     <div style = "padding-bottom: 25px;" *ngIf="ejecutar" >
       <ng-container *ngFor="let item1 of [3,4,5,6,7,8,9,10,11,12]">
         <div *ngIf="item1 <= z_m">
-  <h2 >Tabla para Z_m = {{item1}}</h2>
+  <h2 >Tabla para Z_m = {{item1}}</h2> 
         <table class="default" style="margin-bottom: 25px;">
     
           <tr>
     
             <th scope="row">X</th>
     
-            <th *ngFor="let item of list | slice: 0 : item1">
+            <th *ngFor="let item of list | slice :0 :item1 ">
               {{item}}
             </th>
     
     
           </tr>
     
-          <tr *ngFor="let li of list_result| slice: 0 : item1 ; let i=index">
+          <tr *ngFor="let li of list_result | slice :0 :item1; let i=index">
     
             <th>{{i}}</th>
     
-            <td *ngFor="let item of li | slice: 0 : item1; let j=index">{{item}}</td>
+            <td *ngFor="let item of li | slice :0 :item1 ; let j=index ">{{changeNumer(i,j,item1)}}</td>
     
           </tr>
     
@@ -47,6 +47,6 @@
       </ng-container>
       
       
-    </div>
+    </div> 
   
-  </div>
+   </div> 

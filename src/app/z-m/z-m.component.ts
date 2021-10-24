@@ -39,12 +39,22 @@ export class ZMComponent implements OnInit {
     for (let i = 0; i < this.z_m; i++) {
       for (let j = 0; j < this.z_m; j++) {
         let result = this.list[i] * this.list[j];
-        if (result > 5) {
-          result = result % 6;
+        if (result > this.z_m - 1) {
+          result = result % this.z_m;
         }
         this.list_result[i][j] = result;
       }
     }
     console.log('AppComponent generateMatrix', this.list_result);
   }
+
+
+  changeNumer(numI: number,numJ: number,item1:number){
+    let result = numI * numJ;
+        if (result > item1) {
+          result = result % item1;
+        }
+       return result;
+  }
+
 }
